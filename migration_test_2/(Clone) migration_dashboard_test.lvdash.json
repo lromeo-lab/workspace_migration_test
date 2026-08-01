@@ -1,0 +1,89 @@
+{
+  "datasets": [
+    {
+      "name": "ddaafe0f",
+      "displayName": "mv_operaciones_vuelo",
+      "asset_name": "aena_demo.gestion_aeroportuaria.mv_operaciones_vuelo"
+    }
+  ],
+  "pages": [
+    {
+      "name": "fa8903ed",
+      "displayName": "Example",
+      "layout": [
+        {
+          "widget": {
+            "name": "pasajeros_por_aerolinea",
+            "queries": [
+              {
+                "name": "main_query",
+                "query": {
+                  "datasetName": "ddaafe0f",
+                  "fields": [
+                    {
+                      "name": "Aerolinea",
+                      "expression": "`Aerolinea`"
+                    },
+                    {
+                      "name": "measure(Total Pasajeros)",
+                      "expression": "MEASURE(`Total Pasajeros`)"
+                    }
+                  ],
+                  "disaggregated": false
+                }
+              }
+            ],
+            "spec": {
+              "version": 3,
+              "frame": {
+                "title": "Total Pasajeros por Aerolínea",
+                "showTitle": true
+              },
+              "widgetType": "bar",
+              "encodings": {
+                "x": {
+                  "fieldName": "Aerolinea",
+                  "displayName": "Aerolinea",
+                  "scale": {
+                    "type": "categorical"
+                  }
+                },
+                "y": {
+                  "fieldName": "measure(Total Pasajeros)",
+                  "displayName": "Total Pasajeros",
+                  "scale": {
+                    "type": "quantitative"
+                  }
+                },
+                "color": {
+                  "fieldName": "Aerolinea",
+                  "displayName": "Aerolinea",
+                  "scale": {
+                    "type": "categorical"
+                  }
+                }
+              },
+              "data": {
+                "queryName": "main_query"
+              }
+            }
+          },
+          "position": {
+            "x": 0,
+            "y": 0,
+            "width": 12,
+            "height": 6
+          }
+        }
+      ],
+      "pageType": "PAGE_TYPE_CANVAS",
+      "layoutVersion": "GRID_V1"
+    }
+  ],
+  "uiSettings": {
+    "theme": {
+      "widgetHeaderAlignment": "ALIGNMENT_UNSPECIFIED"
+    },
+    "applyModeEnabled": false
+  }
+}
